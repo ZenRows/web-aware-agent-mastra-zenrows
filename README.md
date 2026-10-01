@@ -148,8 +148,6 @@ Field names in extracted output vary by page type. Search pages and browse pages
 
 **`Expected 2 arguments, but got 1`.** `createTool` types `execute` as taking the input and a second runtime-context argument, and types it as optional. Narrow it with `if (!tool.execute)` first, then call it with both arguments, as `bulk-fetch.ts` does. Calling it with the input alone does not compile.
 
-**`402` with `AUTH010`.** `extract=auto` is enabled per domain and the target is not on your account's list. Use the Markdown path instead, or check the [supported targets](https://docs.zenrows.com/extract/setup) for the current list.
-
 **`401` from Zenrows.** `ZENROWS_API_KEY` is missing from `.env`. The tool sends the value as-is, so an unset variable reaches the API as an invalid key.
 
 **`429` during workflow runs.** Lower the `concurrency` value on the `.foreach` call to stay within your plan's limit. For large lists, [Zenrows Batch](https://www.zenrows.com/products/batch) runs the whole list as one managed job instead.
