@@ -1,0 +1,16 @@
+# secrets
+.env
+
+# dependencies
+node_modules/
+
+# mastra build output and local state
+.mastra/
+src/mastra/public/
+
+# local databases written at runtime
+mastra.db
+mastra.db-shm
+mastra.db-wal
+mastra.duckdb
+mastra.duckdb.wal
